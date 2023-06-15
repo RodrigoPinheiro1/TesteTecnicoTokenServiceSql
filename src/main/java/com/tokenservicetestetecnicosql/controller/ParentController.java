@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/parent")
-public class FatherController {
+public class ParentController {
 
 
 
