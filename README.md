@@ -1,5 +1,5 @@
 # TesteTecnicoTokenServiceSql
-Desafio para fazer uma aplicação spring usando apenas Sql
+Desafio para fazer uma aplicação spring usando apenas Sql  
 nao esqueça de mudar o aplication.properties para configuração do banco de dados local
 
 
