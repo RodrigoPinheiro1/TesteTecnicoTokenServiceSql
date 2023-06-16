@@ -15,42 +15,45 @@ import org.springframework.web.bind.annotation.RestController;
 public class ParentController {
 
 
-
     @Autowired
     private ParentServiceImple fatherService;
 
+    //exercise 1
     @GetMapping("/father")
-    public Page<FatherNameDto> getAllFathersName(Pageable pageable){
+    public Page<FatherNameDto> getAllFathersName(Pageable pageable) {
 
-       return fatherService.seachByName(pageable);
+        return fatherService.seachByName(pageable);
     }
 
+    //exercise 2
+
+    @GetMapping("/moreThanOneChild")
+    public Page<FatherNameDto> getAllFathersNamesHaveMoreThanOneChild(Pageable pageable) {
+
+        return fatherService.findFatherHasMoreThanOneChild(pageable);
+    }
+
+    //exercise 3
     @GetMapping("/family")
-    public Page<ChildDto> getAllFathersAndMothersOfTheirChilds(Pageable pageable){
+    public Page<ChildDto> getAllFathersAndMothersOfTheirChilds(Pageable pageable) {
 
         return fatherService.getAllFathersAndMothersOfTheirChilds(pageable);
     }
 
 
-    @GetMapping("/moreThanOneChild")
-    public Page<FatherNameDto> getAllFathersNamesHaveMoreThanOneChild(Pageable pageable){
-
-      return   fatherService.findFatherHasMoreThanOneChild(pageable);
-    }
-
-
+    //exercise 4
     @GetMapping("/john")
-    public String qtdChildsJohn(){
+    public String qtdChildsJohn() {
 
         return fatherService.HowManyChildsJohnHas();
     }
+    //exercise 5
 
     @GetMapping("/mary")
-    public String qtdChildsMary(){
+    public String qtdChildsMary() {
 
         return fatherService.HowManyChildsMaryHas();
     }
-
 
 
 }
